@@ -1,0 +1,19 @@
+@import '~video.js/src/css/video-js.scss';
+
+// playback style overrides
+.playback_rate[data-playback-rate-select] {
+  margin-top: 8px !important;
+
+  button {
+    outline: none;
+  }
+
+  li {
+    a {
+      padding: 8px 10px 8px 15px !important;
+      &.active:before {
+        top: 8px !important;
+      }
+    }
+  }
+}

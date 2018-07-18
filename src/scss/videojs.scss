@@ -1,0 +1,17 @@
+
+//CUSTOM VARIABLES FOR VIDEO-JS
+$icon-font-path: '~videojs-font/fonts';
+
+// Text, icons, hover states
+$primary-foreground-color: $primary !default;
+
+// Control backgrounds (control bar, big play, menus)
+$primary-background-color: $lightest-gray !default;
+$primary-background-transparency: 1 !default;
+
+// Hover states, slider backgrounds
+$secondary-background-color: $light-gray  !default;
+$secondary-background-transparency: 0.5 !default;
+
+$text-font-family: 'Roboto', Helvetica, sans-serif !default;
+

@@ -1,0 +1,22 @@
+@import 'variables';
+
+.viewly__logo {
+  position: absolute;
+  right: $base-padding * 2;
+  bottom: $control-bar-height + $base-padding * 2;
+  opacity: 0.5;
+  z-index: 2147483647;
+  transition: opacity .2s $easing;
+
+  &__background {
+    fill: #FF4D5F;
+  }
+
+  &__text {
+    fill: #FFFFFF;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}

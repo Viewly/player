@@ -1,0 +1,27 @@
+{
+  "presets": [
+    ["es2015", {"modules": false}],
+    "airbnb",
+    "stage-2",
+    "react"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "react-hot-loader/babel",
+    "transform-es2015-modules-commonjs",
+    ["module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "components": "./components",
+          "containers": "./containers",
+          "redux-modules": "./redux-modules",
+          "shared": "./shared",
+          "api": "./shared/api",
+          "constants": "./constants",
+          "less": "./less"
+        }
+      }
+    ]
+  ]
+}
