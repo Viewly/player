@@ -5,12 +5,12 @@ import { API_URL } from 'constants'
 const VIDEO_MANIFEST_FETCH_REQUEST = 'mediaplayer/video/VIDEO_MANIFEST_FETCH_REQUEST'
 const VIDEO_MANIFEST_FETCH_SUCCESS = 'mediaplayer/video/VIDEO_MANIFEST_FETCH_SUCCESS'
 const VIDEO_MANIFEST_FETCH_ERROR = 'mediaplayer/video/VIDEO_MANIFEST_FETCH_ERROR'
-const SET_VIDEO_ID = 'mediaplayer/video/SET_VIDEO_ID'
 
 const initialState = {
   sources: {},
   poster: '',
   timeline: '',
+  loaded: false,
 }
 
 function makeApiUrl(relative) {
@@ -20,21 +20,20 @@ function makeApiUrl(relative) {
 function reducer(state = initialState, action = {}) {
   const { type, payload } = action
   switch (type) {
+    case VIDEO_MANIFEST_FETCH_REQUEST:
+      return { ...state, loaded: false }
     case VIDEO_MANIFEST_FETCH_SUCCESS:
       return {
         ...state,
+        loaded: true,
         poster: makeApiUrl(payload.cover),
         sources: mapValues(payload.formats, val => makeApiUrl(val)),
         timeline: payload.timeline,
       }
-    case SET_VIDEO_ID:
-      return { ...state, id: payload }
     default:
       return state
   }
 }
-
-export function setVideoId(videoId) { return { type: SET_VIDEO_ID, payload: videoId } }
 
 export function fetchVideoManifest(videoId) {
   return async (dispatch) => {

@@ -23,6 +23,7 @@ class VideoPlayer extends Component {
     window.removeEventListener('resize', this.triggerPlayerResize)
   }
 
+
   setRef = (ref) => {
     this.video = ref
   }
@@ -43,7 +44,7 @@ class VideoPlayer extends Component {
       mute: false,
       height: window.innerHeight - 1,
       width: '100%',
-      autoPlay: autoplay,
+      autoPlay: autoplay ? 1 : 0,
       scrubThumbnails: {
         backdropHeight: 0, // 100 gives a nice effect
         spotlightHeight: 135, // original is 135
