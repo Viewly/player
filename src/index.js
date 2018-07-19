@@ -3,7 +3,6 @@ import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
-import 'videojs-contrib-hls'
 
 import { App } from './containers'
 import configureStore from './store/configureStore'

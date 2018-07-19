@@ -31,13 +31,11 @@ export default new Config().extend('webpack.base.babel.js').merge({
     }),
 
     new UglifyJSPlugin({
-      uglifyOptions: {
-        // fix - Uncaught ReferenceError: n is not defined
-        // https://github.com/videojs/videojs-contrib-hls/issues/600#issuecomment-332627109
-        compress: {
-          comparisons: false,
-        },
-      },
+      // uglifyOptions: {
+      //   compress: {
+      //     comparisons: false,
+      //   },
+      // },
     }),
   ],
 })

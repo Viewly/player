@@ -13,7 +13,7 @@ const appPath = resolve(__dirname, 'src')
 const isProd = process.env.NODE_ENV === 'production'
 
 const scssLoaderOptions = {
-  data: '@import "variables"; @import "videojs";',
+  data: '@import "variables";',
   includePaths: [resolve(__dirname, 'src/scss'), resolve(__dirname, 'node_modules')],
   sourceMap: !isProd,
 }
