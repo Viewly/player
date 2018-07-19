@@ -1,2 +1,14 @@
-//LAYOUT && GLOBAL STYLES
-@import './layout';
+body, html {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+}
+
+// BOX-SIZING
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}

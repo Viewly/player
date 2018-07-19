@@ -9,7 +9,16 @@ import ClapprThumbnailsPlugin from 'clappr-thumbnails-plugin'
 import parseThumbnailSprite from 'shared/parsers/thumbnails'
 import './styles.scss'
 
-class VideoPlayer extends Component {
+export default class VideoPlayer extends Component {
+  static propTypes = {
+    autoplay: PropTypes.bool.isRequired,
+    sources: PropTypes.object.isRequired,
+    poster: PropTypes.string.isRequired,
+    timeline: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+    videoId: PropTypes.string.isRequired,
+  }
+
   componentDidMount() {
     this.initPlayer()
     window.addEventListener('resize', this.triggerPlayerResize)
@@ -86,14 +95,3 @@ class VideoPlayer extends Component {
     )
   }
 }
-
-VideoPlayer.propTypes = {
-  autoplay: PropTypes.bool.isRequired,
-  sources: PropTypes.object.isRequired,
-  poster: PropTypes.string.isRequired,
-  timeline: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  videoId: PropTypes.string.isRequired,
-}
-
-export default VideoPlayer

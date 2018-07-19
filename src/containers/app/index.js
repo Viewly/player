@@ -1,15 +1,26 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import queryString from 'query-string'
 
 import { Logo } from 'components'
 import { VideoContainer } from 'containers'
-import * as videoplayerActions from 'redux-modules/video'
 import * as paramsActions from 'redux-modules/params'
+import selector from './selector'
+
 import './styles.scss'
 
-class AppContainer extends Component {
+@connect(selector, dispatch => ({
+  updateParams: bindActionCreators(paramsActions.updateParams, dispatch),
+}))
+export default class AppContainer extends Component {
+  static propTypes = {
+    hideLogo: PropTypes.bool.isRequired,
+    videoId: PropTypes.string.isRequired,
+    updateParams: PropTypes.func.isRequired,
+  }
+
   componentDidMount() {
     const { updateParams } = this.props
     const parsed = queryString.parse(document.location.search)
@@ -31,21 +42,3 @@ class AppContainer extends Component {
     )
   }
 }
-
-AppContainer.propTypes = {
-  hideLogo: PropTypes.bool.isRequired,
-  videoId: PropTypes.string.isRequired,
-  updateParams: PropTypes.func.isRequired,
-}
-
-export default connect(
-  state => ({
-    videoId: state.params.videoId,
-    hidePlayButton: state.params.hidePlayButton,
-    hideLogo: state.params.hideLogo,
-  }),
-  {
-    play: videoplayerActions.play,
-    updateParams: paramsActions.updateParams,
-  },
-)(AppContainer)

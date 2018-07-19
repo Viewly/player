@@ -18,8 +18,7 @@
           "redux-modules": "./redux-modules",
           "shared": "./shared",
           "api": "./shared/api",
-          "constants": "./constants",
-          "less": "./less"
+          "constants": "./constants"
         }
       }
     ]
