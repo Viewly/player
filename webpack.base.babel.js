@@ -6,6 +6,8 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import Dotenv from 'dotenv'
 import Autoprefixer from 'autoprefixer'
 
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // eslint-disable-line
+
 Dotenv.config()
 
 const appPath = resolve(__dirname, 'src')
@@ -76,6 +78,8 @@ module.exports = {
   },
 
   plugins: [
+    // new BundleAnalyzerPlugin(),
+
     new HtmlWebpackPlugin({
       title: process.env.APP_TITLE || 'Embedded mediaplayer',
       template: resolve(__dirname, 'index.ejs'),
