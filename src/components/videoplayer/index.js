@@ -1,7 +1,7 @@
 /* eslint-disable arrow-body-style */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { values } from 'lodash'
+import { values } from 'lodash/core'
 import Clappr from 'clappr'
 import PlaybackRatePlugin from 'clappr-playback-rate-plugin'
 import DashShakaPlayback from 'dash-shaka-playback'
