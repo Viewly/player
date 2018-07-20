@@ -11,7 +11,7 @@ import './styles.scss'
 
 export default class VideoPlayer extends Component {
   static propTypes = {
-    autoplay: PropTypes.bool.isRequired,
+    autoPlay: PropTypes.bool.isRequired,
     mute: PropTypes.bool.isRequired,
     sources: PropTypes.object.isRequired,
     poster: PropTypes.string.isRequired,
@@ -42,7 +42,7 @@ export default class VideoPlayer extends Component {
     const {
       sources,
       poster,
-      autoplay,
+      autoPlay,
       timeline,
       videoId,
       mute,
@@ -57,7 +57,7 @@ export default class VideoPlayer extends Component {
       mute: mute ? 1 : 0,
       height: window.innerHeight - 1,
       width: '100%',
-      autoPlay: autoplay ? 1 : 0,
+      autoPlay: autoPlay ? 1 : 0,
       scrubThumbnails: {
         backdropHeight: 0, // 100 gives a nice effect
         spotlightHeight: 135, // original is 135

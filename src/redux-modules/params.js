@@ -5,7 +5,7 @@ const UPDATE_PARAMS = 'mediaplayer/params/UPDATE'
 
 const initialState = {
   videoId: '',
-  autoplay: false,
+  autoPlay: false,
   hideLogo: false,
   mute: false,
   ...CUSTOM_PARAMS,
