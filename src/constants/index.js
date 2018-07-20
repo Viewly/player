@@ -7,7 +7,7 @@ if (process && process.env && process.env.DEV) {
   initialParams = DEV_OPTIONS
 }
 
-export const API_URL = 'https://cdn.view.ly'
+export const API_URL = process.env.API === 'production' ? 'https://cdn.view.ly' : 'https://cdn-dev.view.ly'
 export const API_VERSION = 'v1'
 export const API_ENDPOINT = `${API_URL}/${API_VERSION}`
 export const CUSTOM_PARAMS = initialParams

@@ -21,6 +21,7 @@ export default new Config().extend('webpack.base.babel.js').merge({
       'process.env': {
         DEMO: process.env.DEMO,
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        API: JSON.stringify(process.env.API),
       },
     }),
 
