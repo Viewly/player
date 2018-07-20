@@ -11,7 +11,7 @@ export default new Config().extend('webpack.base.babel.js').merge({
   entry: ['babel-polyfill', appPath],
 
   output: {
-    filename: 'js/app.js',
+    filename: 'js/app-[hash].js',
     path: resolve(__dirname, 'build'),
     publicPath: '/',
   },

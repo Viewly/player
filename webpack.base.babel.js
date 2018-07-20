@@ -84,17 +84,17 @@ module.exports = {
       title: process.env.APP_TITLE || 'Embedded mediaplayer',
       template: resolve(__dirname, 'index.ejs'),
       inject: 'body',
-      hash: true,
+      hash: !isProd,
     }),
 
     new ExtractTextPlugin({
       disable: !isProd,
-      filename: 'css/app.css',
+      filename: 'css/app-[hash].css',
     }),
 
     new optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: 'js/vendor.js',
+      filename: isProd ? 'js/vendor-[hash].js' : 'js/vendor.js',
       minChunks: module => module.resource && /node_modules/.test(module.resource),
     }),
   ],
