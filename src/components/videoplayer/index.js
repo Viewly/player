@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { values } from 'lodash/core'
 import Clappr from 'clappr'
-import PlaybackRatePlugin from 'clappr-playback-rate-plugin'
 import DashShakaPlayback from 'dash-shaka-playback'
 import ClapprThumbnailsPlugin from 'clappr-thumbnails-plugin'
+import PlaybackSpeedPlugin from 'clappr-playback-speed/dist/main.min'
 import parseThumbnailSprite from 'shared/parsers/thumbnails'
 import './styles.scss'
 
@@ -45,7 +45,9 @@ export default class VideoPlayer extends Component {
       timeline,
       videoId,
     } = this.props
-    const playableSources = values(sources)
+
+    // TODO - make smarter way of putting "fallback" at the end of array, this just works for now
+    const playableSources = values(sources).reverse()
 
     this.player = new Clappr.Player({
       sources: playableSources,
@@ -60,23 +62,10 @@ export default class VideoPlayer extends Component {
         thumbs: parseThumbnailSprite(timeline, videoId),
       },
       plugins: [
-        PlaybackRatePlugin,
+        PlaybackSpeedPlugin,
         DashShakaPlayback,
         ClapprThumbnailsPlugin,
       ],
-      playbackRateConfig: {
-        defaultValue: '1.0',
-        options: [
-          { value: '0.25', label: '0.25x' },
-          { value: '0.5', label: '0.5x' },
-          { value: '0.75', label: '0.75x' },
-          { value: '1.0', label: 'Normal' },
-          { value: '1.25', label: '1.25x' },
-          { value: '1.5', label: '1.5x' },
-          { value: '1.75', label: '1.75x' },
-          { value: '2.0', label: '2x' },
-        ],
-      },
     })
     this.player.attachTo(this.video)
   }

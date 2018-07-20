@@ -55,7 +55,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "clappr": "^0.2.97",
-    "clappr-playback-rate-plugin": "^0.4.0",
+    "clappr-playback-speed": "git+https://github.com/Viewly/clappr-playback-speed.git",
     "clappr-thumbnails-plugin": "git+https://github.com/turshija/clappr-thumbnails-plugin.git",
     "dash-shaka-playback": "^2.2.6",
     "lodash": "^4.17.5",
