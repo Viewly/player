@@ -13,7 +13,8 @@
     "build:staging": "cross-env NODE_ENV=production webpack -p --config webpack.prod.babel.js",
     "build:production": "cross-env NODE_ENV=production API=production webpack -p --config webpack.prod.babel.js",
     "deploy:staging": "npm run build:staging && ./deploy-staging.sh",
-    "deploy:production": "npm run build:production && ./deploy-production.sh"
+    "deploy:production": "cli-confirm 'This will build and deploy to production. Are you sure? (Y/n)' && npm run deploy:production:y || echo 'Aborted!'",
+    "deploy:production:y": "npm run build:production && ./deploy-production.sh"
   },
   "author": "View.ly",
   "license": "MIT",

@@ -2,7 +2,7 @@
 ##################################
 ##                              ##
 ##     please run using npm     ##
-##   $ npm run deploy:staging   ##
+##  $npm run deploy:production  ##
 ##                              ##
 ##################################
 if [ -d "build" ]; then
