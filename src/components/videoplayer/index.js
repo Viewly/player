@@ -12,6 +12,7 @@ import './styles.scss'
 export default class VideoPlayer extends Component {
   static propTypes = {
     autoplay: PropTypes.bool.isRequired,
+    mute: PropTypes.bool.isRequired,
     sources: PropTypes.object.isRequired,
     poster: PropTypes.string.isRequired,
     timeline: PropTypes.string.isRequired,
@@ -44,6 +45,7 @@ export default class VideoPlayer extends Component {
       autoplay,
       timeline,
       videoId,
+      mute,
     } = this.props
 
     // TODO - make smarter way of putting "fallback" at the end of array, this just works for now
@@ -52,7 +54,7 @@ export default class VideoPlayer extends Component {
     this.player = new Clappr.Player({
       sources: playableSources,
       poster,
-      mute: false,
+      mute: mute ? 1 : 0,
       height: window.innerHeight - 1,
       width: '100%',
       autoPlay: autoplay ? 1 : 0,

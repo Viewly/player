@@ -7,6 +7,7 @@ const initialState = {
   videoId: '',
   autoplay: false,
   hideLogo: false,
+  mute: false,
   ...CUSTOM_PARAMS,
 }
 
