@@ -4,4 +4,5 @@ export default state => ({
   poster: state.video.poster,
   timeline: state.video.timeline,
   autoplay: state.params.autoplay,
+  mute: state.params.mute,
 })

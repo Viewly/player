@@ -16,6 +16,7 @@ export default class VideoContainer extends Component {
     poster: PropTypes.string.isRequired,
     timeline: PropTypes.string.isRequired,
     autoplay: PropTypes.bool.isRequired,
+    mute: PropTypes.bool.isRequired,
     loaded: PropTypes.bool.isRequired,
     fetchVideoManifest: PropTypes.func.isRequired,
     videoId: PropTypes.string.isRequired,
@@ -36,6 +37,7 @@ export default class VideoContainer extends Component {
       videoId,
       children,
       loaded,
+      mute,
     } = this.props
 
     return loaded && (
@@ -44,6 +46,7 @@ export default class VideoContainer extends Component {
         poster={poster}
         timeline={timeline}
         autoplay={autoplay}
+        mute={mute}
         videoId={videoId}
       >
         {children}
