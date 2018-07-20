@@ -3,6 +3,6 @@ export default state => ({
   sources: state.video.sources,
   poster: state.video.poster,
   timeline: state.video.timeline,
-  autoplay: state.params.autoplay,
+  autoPlay: state.params.autoPlay,
   mute: state.params.mute,
 })

@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable quote-props */
 const DEV_OPTIONS = {
-  autoplay: false,
+  autoPlay: false,
   videoId: 'pDgWF1zQKOnt',
   hideLogo: false,
   mute: false,
