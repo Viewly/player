@@ -1,17 +1,17 @@
 /* eslint-disable max-len */
 import React from 'react'
 import queryString from 'query-string'
+import UrlParse from 'url-parse'
 
-import { SIZE_OPTIONS } from 'constants'
 import { SIZE_OPTIONS, SITE_URL } from 'constants'
 import './styles.scss'
 
 const Logo = () => {
   const parsed = queryString.parse(document.location.search)
-  const hideLogoParam = parsed && parsed.hideLogo === 'true'
   const videoUrl = `${SITE_URL}/v/${parsed.videoId}`
+  const referrerParsed = new UrlParse(document.referrer)
 
-  if (hideLogoParam) {
+  if (referrerParsed && referrerParsed.hostname === 'view.ly') {
     return null
   }
 
