@@ -3,18 +3,20 @@ import React from 'react'
 import queryString from 'query-string'
 
 import { SIZE_OPTIONS } from 'constants'
+import { SIZE_OPTIONS, SITE_URL } from 'constants'
 import './styles.scss'
 
 const Logo = () => {
   const parsed = queryString.parse(document.location.search)
   const hideLogoParam = parsed && parsed.hideLogo === 'true'
+  const videoUrl = `${SITE_URL}/v/${parsed.videoId}`
 
   if (hideLogoParam) {
     return null
   }
 
   return (
-    <a href="https://view.ly/" rel="noopener noreferrer" target="_blank" className="viewly__logo">
+    <a href={videoUrl} rel="noopener noreferrer" target="_blank" className="viewly__logo">
 
       <svg
         width={SIZE_OPTIONS.viewlyLogoWidth}
