@@ -2,7 +2,7 @@
 /* eslint-disable quote-props */
 const DEV_OPTIONS = {
   autoPlay: false,
-  videoId: 'pDgWF1zQKOnt',
+  videoId: 'CWNEeZn8vQKs',
   hideLogo: false,
   mute: false,
 }
